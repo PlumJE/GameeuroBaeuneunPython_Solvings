@@ -15,7 +15,8 @@ def main():
     stars = []
     keymap = []
     ship = [0, 0]
-    space_image = pygame.image.load("space.png")    #scope 대신 우주배경 space
+    space_image = pygame.image.load("space.png")
+    scope_image = pygame.image.load("scope.png")
     rock_image = pygame.image.load("rock.png")
 
     scorefont = pygame.font.SysFont(None, 36)
@@ -66,6 +67,7 @@ def main():
         #그리기
         SURFACE.fill((0, 0, 0))
         SURFACE.blit(space_image, (0, 0))
+        SURFACE.blit(scope_image, (300, 300))
         
         stars = sorted(stars, key=lambda x:x["pos"][2], reverse=True)
         for star in stars:
